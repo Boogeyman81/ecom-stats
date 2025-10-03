@@ -2,7 +2,7 @@ import { MetricCard } from "@/components/MetricCard";
 import { SalesChart } from "@/components/SalesChart";
 import { TopList } from "@/components/TopList";
 import { DateRangeFilter } from "@/components/DateRangeFilter";
-import { TrendingUp, DollarSign, Eye, MousePointerClick, Store, Package } from "lucide-react";
+import { TrendingUp, DollarSign, Eye, MousePointerClick, Store, Package, Users } from "lucide-react";
 
 // Dados mockados - substituir pela sua API
 const mockSalesData = [
@@ -24,11 +24,11 @@ const topLojistas = [
 ];
 
 const topProdutos = [
-  { name: "Produto A Premium", value: "R$ 45.200", metric: "1.234 unidades" },
-  { name: "Produto B Especial", value: "R$ 38.900", metric: "987 unidades" },
-  { name: "Produto C Destaque", value: "R$ 32.500", metric: "845 unidades" },
-  { name: "Produto D Elite", value: "R$ 28.700", metric: "723 unidades" },
-  { name: "Produto E Plus", value: "R$ 24.100", metric: "612 unidades" },
+  { name: "Produto A Premium", value: "R$ 45.200", metric: "1.234 unidades vendidas" },
+  { name: "Produto B Especial", value: "R$ 38.900", metric: "987 unidades vendidas" },
+  { name: "Produto C Destaque", value: "R$ 32.500", metric: "845 unidades vendidas" },
+  { name: "Produto D Elite", value: "R$ 28.700", metric: "723 unidades vendidas" },
+  { name: "Produto E Plus", value: "R$ 24.100", metric: "612 unidades vendidas" },
 ];
 
 const Index = () => {
@@ -107,8 +107,8 @@ const Index = () => {
 
           {/* Métricas Adicionais */}
           <section>
-            <h2 className="text-xl font-semibold text-foreground mb-4">Visão por Categoria</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h2 className="text-xl font-semibold text-foreground mb-4">Visão Geral</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <MetricCard
                 title="Lojistas Ativos"
                 value="87"
@@ -120,6 +120,12 @@ const Index = () => {
                 value="2.341"
                 icon={Package}
                 subtitle="Disponíveis na plataforma"
+              />
+              <MetricCard
+                title="Clientes Cadastrados"
+                value="5.678"
+                icon={Users}
+                subtitle="Total na plataforma"
               />
             </div>
           </section>
